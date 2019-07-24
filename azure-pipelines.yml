@@ -36,4 +36,9 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-    
+
+- task: DownloadPipelineArtifact@2
+  inputs:
+    artifact: drop
+    patterns: '**/*.war'
+    path: '$(Build.SourcesDirectory)/bin'
