@@ -37,18 +37,18 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
-#- task: DownloadPipelineArtifact@2
-#  inputs:
-#    artifact: drop
-#    patterns: '**/*.war'
-#    path: '$(Build.ArtifactStagingDirectory)'
-
-- task: DownloadBuildArtifacts@0
+- task: DownloadPipelineArtifact@2
   inputs:
-    buildType: 'specific'
-    project: 'a3330e84-b300-45ff-8a2c-e9f9a964a7e4'
-    pipeline: '3'
-    buildVersionToDownload: 'latest'
-    downloadType: 'specific'
-    itemPattern: '**/*.war'
-    downloadPath: '$(System.ArtifactsDirectory)'
+    artifact: drop
+    patterns: '**/*.war'
+    path: '$(System.ArtifactsDirectory)'
+
+#- task: DownloadBuildArtifacts@0
+ # inputs:
+  #  buildType: 'specific'
+  #  project: 'a3330e84-b300-45ff-8a2c-e9f9a964a7e4'
+  #  pipeline: '3'
+  #  buildVersionToDownload: 'latest'
+  #  downloadType: 'specific'
+  #  itemPattern: '**/*.war'
+  #  downloadPath: '$(System.ArtifactsDirectory)'
