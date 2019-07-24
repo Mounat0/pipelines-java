@@ -24,7 +24,6 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
     goals: 'package'
-    sonarQubeRunAnalysis: true
 
 #this task is to publish 
 - task: PublishBuildArtifacts@1
