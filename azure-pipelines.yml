@@ -25,6 +25,11 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     goals: 'package'
 
+# 9alk khas n copy and add artifact 
+- task: CopyFiles@2
+  inputs:
+   targetFolder: '$(Build.ArtifactStagingDirectory)'
+   
 #this task is to publish 
 - task: PublishBuildArtifacts@1
   inputs:
