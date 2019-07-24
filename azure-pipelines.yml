@@ -41,4 +41,4 @@ steps:
   inputs:
     artifact: drop
     patterns: '**/*.war'
-    path: '$(Build.SourcesDirectory)/bin'
+    path: '$(Build.ArtifactStagingDirectory)'
