@@ -32,9 +32,3 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
     
-# to download the artifact 
-- task: DownloadBuildArtifacts@0
-  inputs:
-    buildType: 'current'
-    downloadType: 'single'
-    downloadPath: '$(System.ArtifactsDirectory)'
