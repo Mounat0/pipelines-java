@@ -26,11 +26,24 @@ steps:
     goals: 'package'
 
 #this task is to publish 
+# this one is to publish from the current run
+# for the current run of a CI/CD or classic pipeline
+#- task: PublishPipelineArtifact@1
+ # inputs:
+  #  path: $(System.DefaultWorkingDirectory)/bin/WebApp
+   # artifact: WebApp
+
+# to download the artifact 
+#- task: DownloadPipelineArtifact@2
+ # inputs:
+  #  artifact: WebApp
+
+
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
     artifactName: 'drop' 
-    #publishLocation: 'Container' # Options: container, filePath
+    publishLocation: 'Container' # Options: container, filePath
     #targetPath: # Required when publishLocation == FilePath
     #parallel: false # Optional
     #parallelCount: # Optional
