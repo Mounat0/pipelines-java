@@ -10,7 +10,7 @@ trigger:
 #kayn ta self-hosted agents : 
 # check https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops#install
 pool:
-  vmImage: 'ubuntu-16.04' # other options: 'macOS-10.13', 'vs2017-win2016'
+  vmImage: 'vs2017-win2016'
 
 # here m building my code using Maven 
 steps:
