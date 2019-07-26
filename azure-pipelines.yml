@@ -25,9 +25,11 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     goals: 'package'
 
-# 9alk khas n copy and add artifact 
+# 9alk khas n copy so i can publish the build artifact
+# not used anymore if m gonna use a pipeline artifact
 - task: CopyFiles@2
   inputs:
+   Contents: '**/*.war'
    targetFolder: '$(Build.ArtifactStagingDirectory)'
    
 #this task is to publish 
@@ -37,11 +39,11 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
-- task: DownloadPipelineArtifact@2
-  inputs:
-    artifact: drop
-    patterns: '**/*.war'
-    path: '$(System.ArtifactsDirectory)'
+#- task: DownloadPipelineArtifact@2
+ # inputs:
+  #  artifact: drop
+  #  patterns: '**/*.war'
+  #  path: '$(System.ArtifactsDirectory)'
 
 #- task: DownloadBuildArtifacts@0
  # inputs:
